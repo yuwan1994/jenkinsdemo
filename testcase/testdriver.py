@@ -11,13 +11,17 @@
 """
 from selenium.webdriver import Chrome
 from unittest import TestCase
+from pathlib import Path
+
+root_path = Path(__file__).resolve().parent.parent
+chrome_path = str(root_path / 'chromedriver95')
 
 
 class Baidu(TestCase):
 
     def setUp(self) -> None:
         self.url = 'https://www.baidu.com'
-        self.driver = Chrome(executable_path='../chromedriver95')
+        self.driver = Chrome(executable_path=chrome_path)
 
     def tearDown(self) -> None:
         self.driver.quit()
