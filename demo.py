@@ -12,6 +12,7 @@
 import time
 import requests
 from selenium.webdriver import Chrome
+from selenium.webdriver.chrome.service import Service
 from sys import platform
 
 if __name__ == '__main__':
@@ -20,11 +21,12 @@ if __name__ == '__main__':
     response = requests.get('https://www.baidu.com')
     print(response.content)
     if platform == "darwin":
-        browser = Chrome(executable_path='chromedriver95')
+        service = Service(r'chromedriver95')
     elif platform == "win32":
-        browser = Chrome(executable_path='chromedriver96.45.exe')
+        service = Service(r'chromedriver96.45.exe')
     else:
         print(f'{platform}')
+    browser = Chrome(service=service)
     browser.get('https://www.baidu.com')
     time.sleep(10)
     print('访问结束')
