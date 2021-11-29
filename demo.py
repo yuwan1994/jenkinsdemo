@@ -21,7 +21,7 @@ if __name__ == '__main__':
     if platform == "darwin":
         browser = Chrome(executable_path='chromedriver95')
     elif platform == "win32":
-        browser = Chrome(executable_path='chromedriver96.exe')
+        browser = Chrome(executable_path='chromedriver96.45.exe')
     else:
         print(f'{platform}')
     browser.get('https://www.baidu.com')
