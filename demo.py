@@ -9,6 +9,7 @@
 ------------ ------- -------- -----------
 2021/11/19 5:09 下午 yuwan  1.0  None
 """
+import time
 import requests
 from selenium.webdriver import Chrome
 from sys import platform
@@ -25,6 +26,7 @@ if __name__ == '__main__':
     else:
         print(f'{platform}')
     browser.get('https://www.baidu.com')
+    time.sleep(10)
     print('访问结束')
     browser.quit()
 
