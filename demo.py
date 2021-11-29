@@ -16,7 +16,7 @@ if __name__ == '__main__':
     print('使用pycharm链接demo进行开发')
     print('开始测试')
     response = requests.get('https://www.baidu.com')
-    print(response.text)
+    print(response.content)
     browser = Chrome(executable_path='chromedriver95')
     browser.get('https://www.baidu.com')
     browser.quit()
