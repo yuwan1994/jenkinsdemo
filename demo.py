@@ -11,13 +11,19 @@
 """
 import requests
 from selenium.webdriver import Chrome
+from sys import platform
 
 if __name__ == '__main__':
     print('使用pycharm链接demo进行开发')
     print('开始测试')
     response = requests.get('https://www.baidu.com')
     print(response.content)
-    browser = Chrome(executable_path='chromedriver95')
+    if platform == "darwin":
+        browser = Chrome(executable_path='chromedriver95')
+    elif platform == "win32":
+        browser = Chrome(executable_path='chromedriver96.exe')
+    else:
+        print(f'{platform}')
     browser.get('https://www.baidu.com')
     browser.quit()
 
