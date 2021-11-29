@@ -9,8 +9,8 @@
 ------------ ------- -------- -----------
 2021/11/19 5:09 下午 yuwan  1.0  None
 """
-import requests
-from selenium.webdriver import Chrome
+# import requests
+# from selenium.webdriver import Chrome
 
 if __name__ == '__main__':
     print('使用pycharm链接demo进行开发')
