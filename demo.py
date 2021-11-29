@@ -25,5 +25,6 @@ if __name__ == '__main__':
     else:
         print(f'{platform}')
     browser.get('https://www.baidu.com')
+    print('访问结束')
     browser.quit()
 
