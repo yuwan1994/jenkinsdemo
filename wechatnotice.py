@@ -28,7 +28,7 @@ class InformRobot:
             "msgtype": "markdown",  # 消息类型，此时固定为markdown
             "markdown": {
                 "content": f"任务{jobname}构建开始！ \n" +
-                           f'查看链接: [{{job_url}}]({job_url})。 \n' +
+                           f'查看链接: [{job_url}]({job_url})。 \n' +
                            f"负责人：@ {noticeperson}  \n" +
                            f'用户名：test01， 密码：test01'
             }
