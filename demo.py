@@ -30,6 +30,6 @@ if __name__ == '__main__':
     browser = Chrome(service=service)
     browser.get('https://www.baidu.com')
     browser.save_screenshot('shot.png')
-    time.sleep(3)
+    time.sleep(5)
     print('访问结束')
     browser.quit()
