@@ -43,5 +43,4 @@ if __name__ == "__main__":
     noticeperson = sys.argv[2]
     jobname = sys.argv[3]
     job_url = sys.argv[4]
-    # execute_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     InformRobot(webhook).markdown_robot(noticeperson, jobname, job_url)
