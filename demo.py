@@ -20,6 +20,7 @@ if __name__ == '__main__':
     print('开始测试')
     response = requests.get('https://www.baidu.com')
     print(response.content)
+    service = None
     if platform == "darwin":
         service = Service(r'chromedriver95')
     elif platform == "win32":
