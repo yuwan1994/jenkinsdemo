@@ -23,12 +23,12 @@ class InformRobot:
         self.url = webhook
         self.sess = requests.session()
 
-    def markdown_robot(self, noticeperson, jobname, RUN_TESTS_DISPLAY_URL):
+    def markdown_robot(self, noticeperson, jobname, run_tests_display_url):
         data = {
             "msgtype": "markdown",  # 消息类型，此时固定为markdown
             "markdown": {
                 "content": f"任务{jobname}构建开始！ \n" +
-                           f'查看链接{RUN_TESTS_DISPLAY_URL}。 \n' +
+                           f'查看链接{run_tests_display_url}。 \n' +
                            f"负责人：@ {noticeperson}  \n"
             }
         }
@@ -41,5 +41,6 @@ if __name__ == "__main__":
     webhook = sys.argv[1]
     noticeperson = sys.argv[2]
     jobname = sys.argv[3]
+    run_tests_display_url = sys.argv[4]
     # execute_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-    InformRobot(webhook).markdown_robot(noticeperson, jobname, RUN_TESTS_DISPLAY_URL)
+    InformRobot(webhook).markdown_robot(noticeperson, jobname, run_tests_display_url)
