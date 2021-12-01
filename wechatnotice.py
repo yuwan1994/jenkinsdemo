@@ -22,13 +22,13 @@ class InformRobot:
         self.url = webhook
         self.sess = requests.session()
 
-    def markdown_robot(self, noticeperson, jobname, job_url):
+    def markdown_robot(self, jobname, job_url):
         data = {
             "msgtype": "markdown",  # 消息类型，此时固定为markdown
             "markdown": {
                 "content": f"任务{jobname}构建开始！ \n" +
                            f'查看链接: [{job_url}]({job_url})。 \n' +
-                           f"负责人：@ {noticeperson}  \n" +
+                           f"负责人：@所有人  \n" +
                            f'用户名：test01， 密码：test01'
             }
         }
@@ -38,8 +38,6 @@ class InformRobot:
 
 
 if __name__ == "__main__":
-    webhook = sys.argv[1]
-    noticeperson = sys.argv[2]
-    jobname = sys.argv[3]
-    job_url = sys.argv[4]
-    InformRobot(webhook).markdown_robot(noticeperson, jobname, job_url)
+    jobname = sys.argv[1]
+    job_url = sys.argv[2]
+    InformRobot('https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=702df320-43fb-4e4a-953d-879ebfe315ac').markdown_robot(jobname, job_url)
