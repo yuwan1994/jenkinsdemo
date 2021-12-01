@@ -14,7 +14,6 @@ import json
 import urllib3
 # import time
 import sys
-from GetCaseTitle import GetCaseTitle
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -24,11 +23,11 @@ class InformRobot:
         self.url = webhook
         self.sess = requests.session()
 
-    def markdown_robot(self, noticeperson):
+    def markdown_robot(self, noticeperson, jobname):
         data = {
             "msgtype": "markdown",  # 消息类型，此时固定为markdown
             "markdown": {
-                "content": "构建开始！ \n" +
+                "content": f"任务{jobname}构建开始！ \n" +
                            f"负责人：@{noticeperson}  \n"
             }
         }
@@ -40,5 +39,6 @@ class InformRobot:
 if __name__ == "__main__":
     webhook = sys.argv[1]
     noticeperson = sys.argv[2]
+    jobname = sys.argv[3]
     # execute_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-    InformRobot(webhook).markdown_robot(noticeperson)
+    InformRobot(webhook).markdown_robot(noticeperson, jobname)
