@@ -28,7 +28,7 @@ if __name__ == '__main__':
         print(f'{platform}')
     browser = Chrome(service=service)
     browser.get('https://www.baidu.com')
-    browser.save_screen_shot()
+
     time.sleep(3)
     print('访问结束')
     browser.quit()
