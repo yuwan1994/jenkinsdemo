@@ -12,7 +12,6 @@
 import requests
 import json
 import urllib3
-# import time
 import sys
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
