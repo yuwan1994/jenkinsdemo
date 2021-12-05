@@ -35,7 +35,8 @@ def test_other3(param1):
     pass
 
 
-
+if __name__ == '__main__':
+    pass
 
 
 
