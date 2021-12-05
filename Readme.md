@@ -6,7 +6,6 @@ pytest --alluredir report test01.py    # 和上面的语句效果一样
 ```
 
 ## 生成最终的测试报告
-
 ```shell
 allure generate report  # 将 report 文件夹下的json文件渲染成网页结果，方便观看。生成的网页结果默认保存在当前文件夹下的 allure-report 文件夹内。
 allure generate report -o html --clean  # -0指定报告生成路径，–clean 先清空测试报告目录，再生成新的测试报告
