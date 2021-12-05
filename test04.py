@@ -22,7 +22,6 @@ def test_other1():
     pass
 
 
-
 @allure.description('这是一个测试case')
 @allure.title('test_other2的标题手动修改显示')
 def test_other2():
