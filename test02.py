@@ -9,8 +9,11 @@
 ------------ ------- -------- -----------
 2021/12/3 4:27 下午 yuwan  1.0  None
 """
+import time
+
 import allure
 from pytest import main
+import subprocess
 
 
 @allure.step("第一步")
@@ -40,4 +43,4 @@ def test_with_nested_steps():
 
 
 if __name__ == '__main__':
-    main()
+    pass
