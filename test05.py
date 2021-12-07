@@ -9,7 +9,7 @@
 ------------ ------- -------- -----------
 2021/12/6 3:43 下午 yuwan  1.0  None
 """
-import allure
+# import allure
 import pytest
 
 
