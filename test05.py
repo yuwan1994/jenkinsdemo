@@ -4,7 +4,7 @@
 @File : test05.py
 @Contact : woshiyuwan@gmail.com
 @License : (C)Copyright 2020-2021
-@introduction : 
+@introduction : allure报告参数化显示
 @Modify Time @Author @Version @Description
 ------------ ------- -------- -----------
 2021/12/6 3:43 下午 yuwan  1.0  None
