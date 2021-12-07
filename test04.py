@@ -14,9 +14,9 @@ import pytest
 
 
 # 链接测试
-@allure.link('https://docs.pytest.org/en/latest',name='pytest帮助文档')
-@allure.issue('http://baidu.com', name='点击我跳转百度')
-@allure.testcase('http://bug.com/user-login-Lw==.html', name='点击我跳转禅道')
+@allure.link('https://docs.pytest.org/en/latest', name='pytest帮助文档')
+@allure.issue('https://baidu.com', name='点击我跳转百度')
+@allure.testcase('https://www.zentao.net/', name='点击我跳转禅道')
 def test_other1():
     """测试链接，测试链接 ，测试链接"""
     pass
@@ -37,8 +37,6 @@ def test_other3(param1):
 
 if __name__ == '__main__':
     pass
-
-
 
 if __name__ == '__main__':
     pass
