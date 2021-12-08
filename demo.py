@@ -18,6 +18,11 @@ from os import system
 from sys import argv
 from pytest import main
 from createjenkinsenvxml import *
+from source import root_path
+
+
+
+
 
 if __name__ == '__main__':
     print('使用pycharm链接demo进行开发')
@@ -39,11 +44,12 @@ if __name__ == '__main__':
     # print('访问结束')
     # browser.quit()
     resultpath = argv[1]
-    create_xml(f'./{resultpath}/environment.xml', {'platform': 'Windows', 'Python.Version': '3.10.0', 'pytest.Version': '6.2.4',
+    file_path = root_path / f'{resultpath}/environment.xml'
+    create_xml(file_path, {'platform': 'Windows', 'Python.Version': '3.10.0', 'pytest.Version': '6.2.4',
                'allure-pytest.Version': '2.9.43', 'project': 'jenkinsdemo', 'user': 'yuwan'})
-    tree = ElementTree.parse(f'./{resultpath}/environment.xml')  # 解析result.xml这个文件
+    tree = ET.parse(file_path)  # 解析result.xml这个文件
     root = tree.getroot()
     pretty_xml(root, '\t', '\n')  # 执行美化方法
-    tree.write(f'./{resultpath}/environment.xml', encoding='utf-8')
+    tree.write(file_path, encoding='utf-8')
     main(['-s', '--alluredir', resultpath])
     # system('allure generate jsondir -c -o report')

@@ -11,7 +11,25 @@
 """
 from xml.etree.ElementTree import Element
 from xml.etree.ElementTree import SubElement
-from xml.etree import ElementTree
+import xml.etree.ElementTree as ET
+from source import root_path
+from pathlib import Path
+
+
+def create_file_or_folder_according_to_the_path(path: str | Path):
+    """
+    根据路径生成文件或文件夹，路径格式要和系统对应
+    @param path:
+    @type path:
+    @return:
+    @rtype:
+    """
+    path = Path(path)
+    if path.suffix:
+        Path(path.parent).mkdir(parents=True, exist_ok=True)
+        Path(path).touch(exist_ok=True)
+    else:
+        Path(path).mkdir(parents=True, exist_ok=True)
 
 
 def create_xml(file_path, contents):
@@ -24,7 +42,7 @@ def create_xml(file_path, contents):
     @return:
     @rtype:
     """
-    from xml.etree.ElementTree import ElementTree
+    create_file_or_folder_according_to_the_path(file_path)
     environment = Element('environment')  # 生成environment根节点
     for content in contents:
         parameter = SubElement(environment, 'parameter')  # 生成environment节点的子节点parameter
@@ -32,9 +50,9 @@ def create_xml(file_path, contents):
         key.text = content
         value = SubElement(parameter, 'value')  # 生成root节点的第二个子节点value
         value.text = contents[content]
-    element_tree = ElementTree(environment)
+    element_tree = ET.ElementTree(environment)
     # 文件头部添加<?xml version="1.0" encoding="GBK"?>，添加参数xml_declaration=True
-    element_tree.write(file_path, encoding='utf-8')
+    element_tree.write(file_path)
     # element_tree.write(file_path, encoding='utf-8', xml_declaration=True)
 
 
@@ -75,9 +93,9 @@ def pretty_xml(element, indent, newline, level=0):
 
 
 if __name__ == '__main__':
-    create_xml('result.xml', {'platform': 'Windows', 'Python.Version': '3.10.0', 'pytest.Version': '6.2.4',
+    create_xml(root_path / 'result.xml', {'platform': 'Windows', 'Python.Version': '3.10.0', 'pytest.Version': '6.2.4',
                'allure-pytest.Version': '2.9.43', 'project': 'jenkinsdemo', 'user': 'yuwan'})
-    tree = ElementTree.parse('result.xml')  # 解析result.xml这个文件
+    tree = ET.parse('result.xml')  # 解析result.xml这个文件
     root = tree.getroot()
     pretty_xml(root, '\t', '\n')  # 执行美化方法
-    tree.write('result.xml', encoding='utf-8')
+    tree.write(root_path / 'result.xml', encoding='utf-8')
