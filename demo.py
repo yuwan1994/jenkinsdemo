@@ -38,12 +38,12 @@ if __name__ == '__main__':
     # time.sleep(5)
     # print('访问结束')
     # browser.quit()
-    create_xml('./jsondir/environment.xml', {'platform': 'Windows', 'Python.Version': '3.10.0', 'pytest.Version': '6.2.4',
+    resultpath = argv[1]
+    create_xml(f'./{resultpath}/environment.xml', {'platform': 'Windows', 'Python.Version': '3.10.0', 'pytest.Version': '6.2.4',
                'allure-pytest.Version': '2.9.43', 'project': 'jenkinsdemo', 'user': 'yuwan'})
-    tree = ElementTree.parse('./jsondir/environment.xml')  # 解析result.xml这个文件
+    tree = ElementTree.parse(f'./{resultpath}/environment.xml')  # 解析result.xml这个文件
     root = tree.getroot()
     pretty_xml(root, '\t', '\n')  # 执行美化方法
-    tree.write('result.xml', encoding='utf-8')
-    resultpath = argv[1]
+    tree.write(f'./{resultpath}/environment.xml', encoding='utf-8')
     main(['-s', '--alluredir', resultpath])
     # system('allure generate jsondir -c -o report')
