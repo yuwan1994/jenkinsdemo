@@ -1,5 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Wed Dec 08 11:46:17 CST 2021","Wed Dec 08 11:46:17 CST 2021","0","","test04","","","","test_other2的标题手动修改显示","这是一个测试case"
-"passed","Wed Dec 08 11:46:17 CST 2021","Wed Dec 08 11:46:17 CST 2021","1","","test04","","","","test_other3[lisa]",""
-"passed","Wed Dec 08 11:46:17 CST 2021","Wed Dec 08 11:46:17 CST 2021","1","","test04","","","","test_other3[full]",""
-"passed","Wed Dec 08 11:46:17 CST 2021","Wed Dec 08 11:46:17 CST 2021","0","","test04","","","","test_other1","测试链接，测试链接 ，测试链接"
