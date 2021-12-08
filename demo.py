@@ -15,6 +15,7 @@ from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.service import Service
 from sys import platform
 from os import system
+from sys import argv
 from pytest import main
 from createjenkinsenvxml import *
 
@@ -43,5 +44,6 @@ if __name__ == '__main__':
     root = tree.getroot()
     pretty_xml(root, '\t', '\n')  # 执行美化方法
     tree.write('result.xml', encoding='utf-8')
-    main(['-s', '--alluredir', 'results'])
+    resultpath = argv[1]
+    main(['-s', '--alluredir', resultpath])
     # system('allure generate jsondir -c -o report')
