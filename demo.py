@@ -38,7 +38,7 @@ if __name__ == '__main__':
     # print('访问结束')
     # browser.quit()
     create_xml('./jsondir/environment.xml', {'platform': 'Windows', 'Python.Version': '3.10.0', 'pytest.Version': '6.2.4',
-                              'allure-pytest.Version': '2.9.43', 'project': 'jenkinsdemo', 'user': 'yuwan'})
+               'allure-pytest.Version': '2.9.43', 'project': 'jenkinsdemo', 'user': 'yuwan'})
     tree = ElementTree.parse('./jsondir/environment.xml')  # 解析result.xml这个文件
     root = tree.getroot()
     pretty_xml(root, '\t', '\n')  # 执行美化方法
