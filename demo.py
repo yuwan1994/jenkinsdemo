@@ -39,7 +39,7 @@ if __name__ == '__main__':
     # # browser.save_screenshot('shot.png')
     # time.sleep(5)
     # browser.quit()
-    resultpath = '/resultspath'
+    resultpath = 'resultspath'
     file_path = root_path / f'{resultpath}/environment.xml'
     create_xml(file_path, {'platform': 'Windows', 'Python.Version': '3.10.0', 'pytest.Version': '6.2.4',
                'allure-pytest.Version': '2.9.43', 'project': 'jenkinsdemo', 'user': 'yuwan'})
