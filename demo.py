@@ -19,9 +19,7 @@ from sys import argv
 from pytest import main
 from createjenkinsenvxml import *
 from source import root_path
-
-
-
+from requests import get
 
 
 if __name__ == '__main__':
@@ -43,7 +41,7 @@ if __name__ == '__main__':
     # time.sleep(5)
     # print('访问结束')
     # browser.quit()
-    resultpath = argv[1]
+    resultpath = '/resultspath'
     file_path = root_path / f'{resultpath}/environment.xml'
     create_xml(file_path, {'platform': 'Windows', 'Python.Version': '3.10.0', 'pytest.Version': '6.2.4',
                'allure-pytest.Version': '2.9.43', 'project': 'jenkinsdemo', 'user': 'yuwan'})
