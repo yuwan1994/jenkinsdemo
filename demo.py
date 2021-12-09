@@ -36,7 +36,6 @@ if __name__ == '__main__':
     #     print(f'{platform}')
     # browser = Chrome(service=service)
     # browser.get('https://www.baidu.com')
-    # browser.get('https://www.sina.com')
     # # browser.save_screenshot('shot.png')
     # time.sleep(5)
     # browser.quit()
