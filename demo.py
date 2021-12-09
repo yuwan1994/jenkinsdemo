@@ -39,7 +39,6 @@ if __name__ == '__main__':
     # browser.get('https://www.sina.com')
     # # browser.save_screenshot('shot.png')
     # time.sleep(5)
-    # print('访问结束')
     # browser.quit()
     resultpath = '/resultspath'
     file_path = root_path / f'{resultpath}/environment.xml'
