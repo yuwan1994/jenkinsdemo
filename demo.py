@@ -9,13 +9,13 @@
 ------------ ------- -------- -----------
 2021/11/19 5:09 下午 yuwan  1.0  None
 """
-import time
-import requests
-from selenium.webdriver import Chrome
-from selenium.webdriver.chrome.service import Service
-from sys import platform
-from os import system
-from sys import argv
+# import time
+# import requests
+# from selenium.webdriver import Chrome
+# from selenium.webdriver.chrome.service import Service
+# from sys import platform
+# from os import system
+# from sys import argv
 from pytest import main
 from createjenkinsenvxml import *
 from source import root_path
